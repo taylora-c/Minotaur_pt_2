@@ -2,7 +2,6 @@ import java.util.*;
 import java.util.List;
 import java.util.stream.IntStream;
 import java.util.OptionalInt;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.Iterator;
 
  
@@ -19,7 +18,7 @@ public class marsRover {
         Thread thermos[] = new Thread[nThreads];
 
         //prints readings for 12 'hours' worth of data
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 12; i++){
             //takes in temperatures at every 'minute'
             for(int j = 0; j < 60; j++){
                 //reads 8 temperatures at every 'minute'
@@ -42,7 +41,6 @@ public class marsRover {
 
 class tempReader implements Runnable{
 
-    ReentrantLock lock = new ReentrantLock();
     Random r = new Random();
     int tID;
     int minute;
